@@ -193,9 +193,10 @@ final class DropdownController: NSObject, NSWindowDelegate {
         case #selector(NSResponder.moveUp(_:)):
             content.moveSelection(by: -1)
         case #selector(NSResponder.insertNewline(_:)):
+            // Return does what clicking the row does: plain text.
             let index = content.selectedIndex ?? 0
             if index < content.rows.count {
-                copy(content.rows[index].clip.id, style: .asCopied)
+                copy(content.rows[index].clip.id, style: .plain)
             }
         case #selector(NSResponder.cancelOperation(_:)):
             if query.isEmpty {

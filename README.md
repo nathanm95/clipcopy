@@ -9,8 +9,8 @@ A lightweight clipboard history for the macOS menu bar. Click the paperclip, pic
 ## What it does
 
 - **Remembers what you copy:** text (plain or formatted), images and files copied in Finder. The newest 1,000 clips are kept; older ones are deleted automatically.
-- **Formatting your way:** formatted clips have two buttons. **Aa** copies the clip exactly as it was, with fonts, colours and links. **T** copies plain text only.
-- **Tidier plain text:** **T** also swaps the look-alike spaces that Word and web pages use (non-breaking, narrow and thin spaces) for ordinary ones, and removes invisible characters such as zero-width spaces and soft hyphens. Those are what show up as "?" or odd gaps when pasted elsewhere. Line breaks, tabs, quotes and emoji are left alone.
+- **Plain by default, formatting when you want it:** clicking a clip copies it as plain text. Formatted clips also have two buttons: **Aa** copies the clip exactly as it was, with fonts, colours and links, and **T** copies plain text.
+- **Tidier plain text:** plain copies also swap the look-alike spaces that Word and web pages use (non-breaking, narrow and thin spaces) for ordinary ones, and removes invisible characters such as zero-width spaces and soft hyphens. Those are what show up as "?" or odd gaps when pasted elsewhere. Line breaks, tabs, quotes and emoji are left alone.
 - **Search everything:** type as soon as the dropdown opens to search all 1,000 clips.
 - **No duplicates:** copying something that's already in the history moves it to the top. If the same words arrive again with formatting, the formatting is added to the existing clip.
 - **Details on hover:** the line under the clips shows where the highlighted clip came from, when you copied it, and what it is.
@@ -25,8 +25,8 @@ A lightweight clipboard history for the macOS menu bar. Click the paperclip, pic
 | Open | Click the paperclip in the menu bar |
 | Search | Just start typing |
 | Move | ↑ ↓, or the pointer |
-| Copy (as copied) | Return, or click the row |
-| Copy with formatting / plain | **Aa** / **T** on formatted rows |
+| Copy as plain text | Return, or click the row |
+| Copy with formatting | **Aa** on formatted rows (**T** is plain, like a click) |
 | Delete a clip | **×** on the highlighted row |
 | Clear the search, then close | Esc |
 

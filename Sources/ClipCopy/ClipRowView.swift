@@ -1,7 +1,7 @@
 import AppKit
 
-/// One clip in the dropdown. Clicking the row copies the clip as it was copied. Formatted clips also
-/// get Aa (with formatting) and T (plain text) buttons, and the highlighted row shows × to delete it.
+/// One clip in the dropdown. Clicking the row copies it as plain text. Formatted clips also get
+/// Aa (with formatting) and T (plain text) buttons, and the highlighted row shows × to delete it.
 final class ClipRowView: NSView {
     static let textRowHeight: CGFloat = 24
     static let imageRowHeight: CGFloat = 44
@@ -159,7 +159,7 @@ final class ClipRowView: NSView {
 
     override func mouseUp(with event: NSEvent) {
         guard bounds.contains(convert(event.locationInWindow, from: nil)) else { return }
-        onCopy?(.asCopied)
+        onCopy?(.plain)
     }
 
     @objc private func formattedClicked() {

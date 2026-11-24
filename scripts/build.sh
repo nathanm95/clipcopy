@@ -35,6 +35,11 @@ echo "Built $APP (signed: ${IDENTITY:-ad hoc})"
 
 if [[ "${1:-}" == "--install" ]]; then
   pkill -x ClipCopy || true
+  # Wait for the old copy to quit; opening the app while it's still exiting fails with error -600.
+  for _ in {1..25}; do
+    pgrep -x ClipCopy >/dev/null || break
+    sleep 0.2
+  done
   rm -rf /Applications/ClipCopy.app
   cp -R "$APP" /Applications/ClipCopy.app
   open /Applications/ClipCopy.app

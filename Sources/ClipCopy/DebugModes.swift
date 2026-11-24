@@ -444,7 +444,10 @@ enum MenuTest {
             }),
             (3.7, {
                 check(!dropdown.isOpen, "Return closes the dropdown")
-                check(!expected.isEmpty && pasteboard.string(forType: .string) == expected, "Return copies the highlighted clip")
+                let returnTypes = pasteboard.types ?? []
+                check(!expected.isEmpty && pasteboard.string(forType: .string) == expected
+                      && !returnTypes.contains(.rtf) && !returnTypes.contains(.html),
+                      "Return copies the highlighted clip as plain text")
                 lines.append("      closed: \(Memory.describe())")
                 dropdown.open()
             }),
